@@ -14,6 +14,21 @@ class Garden
   end
 end
 
+class Plant
+  attr_accessor :name, :garden
+
+  @@all = []
+
+  def initialize(name:)
+    @name = name
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+end
+
 lawn = Garden.new(name: 'Front Lawn')
 
 basil = Plant.new(name: 'Basil')
@@ -23,3 +38,4 @@ cucumber = Plant.new(name: 'Cucumber')
 cucumber.garden = lawn
 
 p lawn.plants
+
